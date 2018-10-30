@@ -45,10 +45,10 @@ let map = new Image();
  
   }
 
-let character = new Image();
-  character.src = './assets/image/zombie2.png';
-  character.onload = function() {
-    context.drawImage(character, 0, 0);
+let zombie2 = new Image();
+  zombie2.src = './assets/image/zombie2.png';
+  zombie2.onload = function() {
+    context.drawImage(zombie2, 0, 0);
   }
 
     setInterval (function () {
@@ -56,8 +56,8 @@ let character = new Image();
       context.drawImage(map, 0, 0);
     }
   
-    if (character) {
-      context.drawImage(character, 0, 0);
+    if (zombie2) {
+      context.drawImage(zombie2, 0, 0);
     }
   }, 1000/30)
 
