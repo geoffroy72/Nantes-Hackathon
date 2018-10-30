@@ -39,17 +39,19 @@ let map = new Image();
   map.src = './assets/image/map.jpg';
   map.onload = function() {
     context.drawImage(map, 0, 0);
-    
+  }
 
 let pacman= new Image();
   pacman.src="./assets/image/pacman.png";
   pacman.onload = function() {
     context.drawImage(pacman, 100,100);
+  }
 
 let zombie1= new Image();
   zombie1.src="./assets/image/zombie1.png";
   zombie1.onload = function() {
     context.drawImage(zombie1, 0, 0);
+  }
     
 let zombie2 = new Image();
   zombie2.src = './assets/image/zombie2.png';
@@ -77,7 +79,5 @@ let zombie2 = new Image();
         context.drawImage(zombie2, 0, 0);
       }
   }, 1000/30)
-
-
 
 }
