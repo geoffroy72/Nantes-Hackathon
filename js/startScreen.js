@@ -72,7 +72,7 @@ window.onload = () => {
       </div>
       <div class="row mt-5">
         <div class="col-md-12 text-center">
-          <button class="themeBtn">START GAME</button>
+          <button id="startGame" onClick="launchCanvas()" class="themeBtn">START GAME</button>
         </div>
       </div>
       <div class="row mt-5">
@@ -88,25 +88,27 @@ window.onload = () => {
   
     
     document.getElementById("screen").innerHTML = startScreen;
-    let audio = new Audio('Undead.mp3');
+    let audio = new Audio('./assets/sound/Undead.mp3');
     
     let startMusicHandler = document.getElementById("musicLaunch")
-      startMusicHandler.addEventListener('click', function(){
-        console.log("test")
-        if(startMusicHandler.value === "OFF"){
-          audio.play();
-          startMusicHandler.value = "ON";
-          startMusicHandler.innerHTML = "MUSIC ON";
-        }
-        else if(startMusicHandler.value === "ON") {
-          audio.pause();
-          startMusicHandler.value = "OFF";
-          startMusicHandler.innerHTML = "MUSIC OFF";
-        }
-  })
-  
-  }
-  
-  
-  
-  
+
+    startMusicHandler.addEventListener('click', function(){
+      if(startMusicHandler.value === "OFF"){
+        audio.play();
+        startMusicHandler.value = "ON";
+        startMusicHandler.innerHTML = "MUSIC ON";
+      }
+      else if(startMusicHandler.value === "ON") {
+        audio.pause();
+        startMusicHandler.value = "OFF";
+        startMusicHandler.innerHTML = "MUSIC OFF";
+      }
+    });
+
+    let startGameHandler = document.getElementById("startGame")
+
+    startGameHandler.addEventListener('click', function(){
+      document.getElementById("screenSwitch").className = "d-none"
+      document.getElementById("canvas").className = "d-block"
+    });
+  }  
