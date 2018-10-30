@@ -42,6 +42,23 @@ let map = new Image();
     context.drawImage(map, 0, 0);
  
   }
+
+  
+    let pacman= new Image();
+    pacman.src="./assets/image/pacman.png";
+    pacman.onload = function() {
+      context.drawImage(pacman, 100,100);
+     }
+  
+   setInterval (function(){
+     if (map){
+       context.drawImage(map, 0, 0);
+     }
+     if (pacman){
+       context.drawImage(pacman, 100, 100);
+     }
+   })
+
 //end of display map
 
 
