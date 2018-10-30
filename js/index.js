@@ -47,4 +47,6 @@ let map = new Image();
 
 
 // end of the game code
+
 }
+
