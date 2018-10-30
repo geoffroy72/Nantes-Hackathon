@@ -1,5 +1,7 @@
 window.onload = () => {
 
+  
+
 // code for press enter to have fullscreen
 
 document.addEventListener("keydown", function(e) {
@@ -42,6 +44,23 @@ let map = new Image();
     context.drawImage(map, 0, 0);
  
   }
+
+let character = new Image();
+  character.src = './assets/image/zombie2.png';
+  character.onload = function() {
+    context.drawImage(character, 0, 0);
+  }
+
+    setInterval (function () {
+    if (map) {
+      context.drawImage(map, 0, 0);
+    }
+  
+    if (character) {
+      context.drawImage(character, 0, 0);
+    }
+  }, 1000/30)
+
 //end of display map
 
 
