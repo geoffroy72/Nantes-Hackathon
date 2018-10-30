@@ -1,5 +1,7 @@
 window.onload = () => {
 
+  
+
 // code for press enter to have fullscreen
 
 document.addEventListener("keydown", function(e) {
@@ -40,24 +42,31 @@ let map = new Image();
   map.src = './assets/image/map.jpg';
   map.onload = function() {
     context.drawImage(map, 0, 0);
- 
+    
+let pacman= new Image();
+  pacman.src="./assets/image/pacman.png";
+  pacman.onload = function() {
+    context.drawImage(pacman, 100,100);
+
+let zombie2 = new Image();
+  zombie2.src = './assets/image/zombie2.png';
+  zombie2.onload = function() {
+    context.drawImage(zombie2, 0, 0);
   }
 
-  
-    let pacman= new Image();
-    pacman.src="./assets/image/pacman.png";
-    pacman.onload = function() {
-      context.drawImage(pacman, 100,100);
-     }
-  
-   setInterval (function(){
-     if (map){
-       context.drawImage(map, 0, 0);
-     }
-     if (pacman){
-       context.drawImage(pacman, 100, 100);
-     }
-   })
+    setInterval (function () {
+    if (map) {
+      context.drawImage(map, 0, 0);
+    }
+    if (pacman){
+      context.drawImage(pacman, 100, 100);
+    }
+    if (zombie2) {
+      context.drawImage(zombie2, 0, 0);
+    }
+      
+
+  }, 1000/30)
 
 //end of display map
 
