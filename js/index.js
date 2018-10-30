@@ -41,16 +41,34 @@ function launchCanvas() {
     map.onload = function() {
       context.drawImage(map, 0, 0);
     }
+
+  let houses = [
+    {address: '', x: 96, y:544},
+    {address: '', x: 128, y:32},
+    {address: '', x: 128, y:320},
+    {address: '', x: 224, y:448},
+    {address: '', x: 384, y:160},
+    {address: '', x: 416, y:672},
+    {address: '', x: 448, y:96},
+    {address: '', x: 544, y:416},
+    {address: '', x: 576, y:96},
+    {address: '', x: 608, y:608},
+    {address: '', x: 672, y:224},
+    {address: '', x: 768, y:352},
+    {address: '', x: 800, y:512},
+    {address: '', x: 896, y:128},
+    {address: '', x: 960, y:672},]
+
+      let housesReady = false;
+      let houseImage = new Image();
+      houseImage.src = './assets/image/home-1.png';
+      houseImage.onload = function() {
+        housesReady = true
+      }
+    
   
-  
-  let pacman= new Image();
-    pacman.src="./assets/image/pacman.png";
-    pacman.onload = function() {
-      context.drawImage(pacman, 100,100);
-    }
-  
-  let zombie1= new Image();
-    zombie1.src="./assets/image/zombie1.png";
+  let zombie1 = new Image();
+    zombie1.src = './assets/image/zombie1.png';
     zombie1.onload = function() {
       context.drawImage(zombie1, 0, 0);
     }
@@ -113,11 +131,17 @@ function launchCanvas() {
         if (map) {
           context.drawImage(map, 0, 0);
         }
-        
+
+        if(housesReady){
+          houses.map( house => {
+            context.drawImage(houseImage, house.x, house.y)
+            })
+        }
+
         if (heroReady){
           context.drawImage(heroImage, hero.x, hero.y);
         }
-  
+
         
         // if (zombie1) {
         //   context.drawImage(zombie1, 250, 250);
