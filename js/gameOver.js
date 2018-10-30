@@ -4,7 +4,7 @@ let gameOverScreen = `
       <div class="row">
         <div class="col-md-12">
           <p text-center gameover >GAME OVER</p>
-          <img class="resize" src="https://image.ibb.co/dRNRXf/pacman.jpg" alt="game over"/>
+          <img class="resizeGameOver" src="https://image.ibb.co/dRNRXf/pacman.jpg" alt="game over"/>
             <button type="button" class="btn btn-warning">TRY AGAIN</button>
         </div>
       </div>
