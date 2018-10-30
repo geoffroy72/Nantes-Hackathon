@@ -1,5 +1,6 @@
 window.onload = () => {
 
+
 document.addEventListener("keydown", function(e) {
     if (e.keyCode == 13) {
       toggleFullScreen();
@@ -38,16 +39,14 @@ let map = new Image();
   map.src = './assets/image/map.jpg';
   map.onload = function() {
     context.drawImage(map, 0, 0);
+    
+let zombie2 = new Image();
+  zombie2.src = './assets/image/zombie2.png';
+  zombie2.onload = function() {
+    context.drawImage(zombie2, 0, 0);
  
   }
 
-
-  
-    let zombie1 = new Image();
-    zombie1.src = './assets/image/zombie1.png';
-    zombie1.onload = function() {
-      context.drawImage(zombie1, 0, 0);
-    }
 
     setInterval (function (){
       if (map) {
@@ -56,6 +55,10 @@ let map = new Image();
 
       if (zombie1) {
         context.drawImage(zombie1, 0, 0);
+      }
+      
+      if (zombie2) {
+        context.drawImage(zombie2, 0, 0);
       }
   }, 1000/30)
 
