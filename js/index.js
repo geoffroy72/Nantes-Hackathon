@@ -1,4 +1,5 @@
-window.onload = () => {
+function launchCanvas() {
+
 
 
 document.addEventListener("keydown", function(e) {
@@ -42,6 +43,11 @@ let map = new Image();
   }
 
 
+let pacman= new Image();
+  pacman.src="./assets/image/pacman.png";
+  pacman.onload = function() {
+    context.drawImage(pacman, 100,100);
+  }
 
 let zombie1= new Image();
   zombie1.src="./assets/image/zombie1.png";
@@ -55,6 +61,7 @@ let zombie2 = new Image();
     context.drawImage(zombie2, 0, 0);
  
   }
+
 
 
 
@@ -111,6 +118,19 @@ addEventListener("keyup", function (e) {
         context.drawImage(heroImage, hero.x, hero.y);
       }
       
+            if (pacman){
+      context.drawImage(pacman, 100, 100);
+      }
+      
+      if (zombie1) {
+        context.drawImage(zombie1, 0, 0);
+      }
+      
+      if (zombie2) {
+        context.drawImage(zombie2, 0, 0);
+      }
+
+      
       // if (zombie1) {
       //   context.drawImage(zombie1, 250, 250);
       // }
@@ -118,7 +138,6 @@ addEventListener("keyup", function (e) {
       // if (zombie2) {
       //   context.drawImage(zombie2, 300, 300);
       // }
-  }, 1000/30)
-
+        }, 1000/30)
 
 }
