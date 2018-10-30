@@ -40,6 +40,17 @@ let map = new Image();
   map.onload = function() {
     context.drawImage(map, 0, 0);
     
+
+let pacman= new Image();
+  pacman.src="./assets/image/pacman.png";
+  pacman.onload = function() {
+    context.drawImage(pacman, 100,100);
+
+let zombie1= new Image();
+  zombie1.src="./assets/image/zombie1.png";
+  zombie1.onload = function() {
+    context.drawImage(zombie1, 0, 0);
+    
 let zombie2 = new Image();
   zombie2.src = './assets/image/zombie2.png';
   zombie2.onload = function() {
@@ -48,11 +59,16 @@ let zombie2 = new Image();
   }
 
 
+
     setInterval (function (){
       if (map) {
         context.drawImage(map, 0, 0);
       }
-
+      
+      if (pacman){
+      context.drawImage(pacman, 100, 100);
+      }
+      
       if (zombie1) {
         context.drawImage(zombie1, 0, 0);
       }
