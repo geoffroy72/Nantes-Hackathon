@@ -1,7 +1,5 @@
 window.onload = () => {
 
-// code for press enter to have fullscreen
-
 document.addEventListener("keydown", function(e) {
     if (e.keyCode == 13) {
       toggleFullScreen();
@@ -42,11 +40,25 @@ let map = new Image();
     context.drawImage(map, 0, 0);
  
   }
-//end of display map
 
 
+  
+    let zombie1 = new Image();
+    zombie1.src = './assets/image/zombie1.png';
+    zombie1.onload = function() {
+      context.drawImage(zombie1, 0, 0);
+    }
 
-// end of the game code
+    setInterval (function (){
+      if (map) {
+        context.drawImage(map, 0, 0);
+      }
+
+      if (zombie1) {
+        context.drawImage(zombie1, 0, 0);
+      }
+  }, 1000/30)
+
+
 
 }
-
