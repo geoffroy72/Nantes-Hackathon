@@ -1,5 +1,6 @@
-window.onload = () => {
+function launchCanvas() {
 
+  console.log("test")
 
 document.addEventListener("keydown", function(e) {
     if (e.keyCode == 13) {
