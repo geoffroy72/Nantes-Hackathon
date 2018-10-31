@@ -346,6 +346,11 @@ launchCanvas = () => {
     }
   }
 
+  function changeColor(newColor) {
+    var elem = document.getElementById('time');
+    elem.style.color = newColor;
+  }
+
   function render() {
     // game.debug.body(chubby);
     // zombi1.forEachAlive(zombi => {
