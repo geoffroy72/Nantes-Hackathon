@@ -1,4 +1,3 @@
-
 // window.onload = () => {
 //   let candies = [];
 //   let streets = [];
@@ -77,7 +76,27 @@ window.onload = () => {
       </div>
       <div class="row mt-5">
         <div class="col-md-12 text-center">
-          <button class="themeBtn">HIGH SCORE</button>
+          <button type="button" class="themeBtn" data-toggle="modal" data-target="#exampleModal">
+          HIGH SCORE
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header d-flex justify-content-center">
+                  <h1 class="modal-title text-orange" id="exampleModalLabel">HIGH SCORE</h1>
+
+                </div>
+                <div class="modal-body">
+                  <h2><span class="adress-score mr-5">Adress</span> <span class="score text-green">Score</span></h2>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                  <button type="button" class="themeBtn" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="row mt-5">
@@ -89,6 +108,7 @@ window.onload = () => {
     
     document.getElementById("screen").innerHTML = startScreen;
     let audio = new Audio('./assets/sound/Undead.mp3');
+    let audioGame = new Audio('./assets/sound/GameMusic.mp3')
     
     let startMusicHandler = document.getElementById("musicLaunch")
 
@@ -109,6 +129,11 @@ window.onload = () => {
 
     startGameHandler.addEventListener('click', function(){
       document.getElementById("screenSwitch").className = "d-none"
-      document.getElementById("canvas").className = "d-block"
+      audioGame.play();
+      audioGame.volume = 0.08;
+      if (audio.play()) {
+        audio.pause()
+      }
+      document.getElementById("canvas").style = "display: block; touch-action: none; -moz-user-select: none; width: 1024px; height: 768px;"
     });
   }  
