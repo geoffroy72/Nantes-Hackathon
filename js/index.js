@@ -1,4 +1,6 @@
-let game = new Phaser.Game(1024, 768, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
+launchCanvas = () => {
+
+let game = new Phaser.Game(1024, 768, Phaser.AUTO, 'canvas', { preload: preload, create: create, update: update, render: render });
 let upKey;
 let downKey;
 let leftKey;
@@ -248,5 +250,7 @@ function render() {
   housesGroupe.forEachAlive(house => {
     // game.debug.body(house);
   });
+
+}
 
 }

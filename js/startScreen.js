@@ -109,6 +109,6 @@ window.onload = () => {
 
     startGameHandler.addEventListener('click', function(){
       document.getElementById("screenSwitch").className = "d-none"
-      document.getElementById("canvas").className = "d-block"
+      document.getElementById("canvas").style = "display: block; touch-action: none; -moz-user-select: none; width: 1024px; height: 768px;"
     });
   }  
