@@ -50,6 +50,7 @@ function launchCanvas() {
     {address: '', x: 384, y:160},
     {address: '', x: 416, y:672},
     {address: '', x: 448, y:96},
+    {address: '', x: 512, y:512},
     {address: '', x: 544, y:416},
     {address: '', x: 576, y:96},
     {address: '', x: 608, y:608},
@@ -75,14 +76,9 @@ function launchCanvas() {
       
   let zombie2 = new Image();
     zombie2.src = './assets/image/zombie2.png';
-    zombie2.onload = function() {
-      context.drawImage(zombie2, 0, 0);
-   
+    zombie2.onload = function(x, y) {
+      context.drawImage(zombie2, 0, 0, 32,32, x-26, y-17,25, 32, 32);
     }
-  
-  
-  
-  
   
   // Hero image
   let heroReady = false;
@@ -90,7 +86,7 @@ function launchCanvas() {
   heroImage.onload = function () {
     heroReady = true;
   };
-  heroImage.src = "./assets/image/pacman-alone.png";
+  heroImage.src = "./assets/image/chubby-alone.png";
   
   // Game objects
   let hero = {
@@ -132,16 +128,15 @@ function launchCanvas() {
           context.drawImage(map, 0, 0);
         }
 
+        if (heroReady){
+          context.drawImage(heroImage, hero.x, hero.y);
+        }
+
         if(housesReady){
           houses.map( house => {
             context.drawImage(houseImage, house.x, house.y)
             })
         }
-
-        if (heroReady){
-          context.drawImage(heroImage, hero.x, hero.y);
-        }
-
         
         // if (zombie1) {
         //   context.drawImage(zombie1, 250, 250);
