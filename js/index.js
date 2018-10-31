@@ -30,7 +30,7 @@ function preload() {
   game.load.spritesheet('chubby', './assets/image/chubbyboy-run.png', 26, 26, 4);
   game.load.spritesheet('candies', './assets/image/candies.png', 16, 16);
   game.load.image('house', './assets/image/home-1.png');
-  
+  game.load.spritesheet('zombi1', 'assets/image/zombie1-sprite.png', 26, 26, 4);
 }
 
 function create() {
@@ -163,6 +163,19 @@ function create() {
     housesGroupe.add(houseTemp);
   })
 
+  // GENERATE ZOMBIE 
+  game.physics.arcade.skipQuadTree = false;
+
+  zombi1 = game.add.group();
+  zombi1.enableBody = true;
+
+  for (let i = 0; i < 20; i++) {
+    let s = zombi1.create(game.world.randomX, game.world.randomY, 'zombi1');
+    s.body.collideWorldBounds = true;
+    s.body.bounce.set(1);
+    s.body.velocity.setTo(10 + Math.random() * 10, 10 + Math.random() * 10);
+  }
+
   layer.debug = false;
 
   upKey = game.input.keyboard.addKey(Phaser.Keyboard.UP);
@@ -198,9 +211,15 @@ function collisionHouseHandler (ob1, obj2) {
   // create particle emit
 }
 
+function collisionChubbyHandler(obj1, obj2) {
+  console.log("MERDE")
+}
+
 function update() {
   game.physics.arcade.collide(chubby, layer);
+  game.physics.arcade.collide(layer, zombi1);
   game.physics.arcade.collide(housesGroupe, chubby, collisionHouseHandler, null, this);
+  game.physics.arcade.collide(chubby, zombi1, collisionChubbyHandler, null, this);
 
   chubby.body.velocity.set(0);
 
