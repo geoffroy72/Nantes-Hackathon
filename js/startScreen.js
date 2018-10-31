@@ -71,7 +71,7 @@ window.onload = () => {
       </div>
       <div class="row mt-5">
         <div class="col-md-12 text-center">
-          <button id="startGame" onClick="launchCanvas()" class="themeBtn">START GAME</button>
+          <button id="startGame" onClick="launchCanvas()" class="themeBtn1">START GAME</button>
         </div>
       </div>
       <div class="row mt-5">

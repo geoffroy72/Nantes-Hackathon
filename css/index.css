@@ -24,7 +24,7 @@ body {
 }
 
 .themeBtn {
-	background: #ff5c00;
+	background: #a73d00;
 	color: #ffffff !important;
 	display: inline-block;
 	font-size: 24px;
@@ -40,6 +40,24 @@ body {
 	cursor:pointer;
 	border-radius:100px;
 
+}
+
+.themeBtn1 {
+	background: #ff5c00;
+	color: #ffffff !important;
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 500;
+	height: 50px;
+	width: 180px;
+	line-height: 0.8;
+	padding: 18px 30px;
+	text-transform: capitalize;
+	border: 0px !important;
+	border-radius: 1px;
+	letter-spacing: 0.5px;
+	cursor:pointer;
+	border-radius:100px;
 }
 
 button:focus {
