@@ -32,7 +32,7 @@ function preload() {
   game.load.spritesheet('chubby', './assets/image/chubbyboy-run.png', 26, 26, 4);
   game.load.spritesheet('candies', './assets/image/candies.png', 16, 16);
   game.load.image('house', './assets/image/home-1.png');
-  game.load.spritesheet('zombi1', 'assets/image/zombie1-sprite.png', 26, 26, 4);
+  game.load.spritesheet('zombi1', 'assets/image/zombi2-sprite.png', 26, 26, 4);
 }
 
 function create() {
@@ -173,10 +173,13 @@ function create() {
 
   for (let i = 0; i < 20; i++) {
     let s = zombi1.create(game.world.randomX, game.world.randomY, 'zombi1');
+    let walk = s.animations.add('walk');
     s.body.collideWorldBounds = true;
     s.body.bounce.set(1);
     s.body.velocity.setTo(10 + Math.random() * 10, 10 + Math.random() * 10);
+    s.animations.play('walk', 10, true);
   }
+
 
   layer.debug = false;
 
