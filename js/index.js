@@ -38,7 +38,9 @@ launchCanvas = () => {
       let dataStreet = [];
 
       fetch(`https://fr-en.openfoodfacts.org/category/candies/${getRandomArbitrary(1,50)}.json`)
+      
       .then(response=> response.json())
+      console.log(response.json)
       .then( json => {dataCandy = json.products})
       .then( () =>{ dataCandy.map(candy => {
         return(
@@ -346,10 +348,6 @@ launchCanvas = () => {
     }
   }
 
-  function changeColor(newColor) {
-    var elem = document.getElementById('time');
-    elem.style.color = newColor;
-  }
 
   function render() {
     // game.debug.body(chubby);

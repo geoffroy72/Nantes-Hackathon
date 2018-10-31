@@ -114,3 +114,12 @@ button:focus {
 	.modal {
 		border-radius: 25px;
 	}
+
+	.score {
+		text-align: left;
+	}
+
+	.score-title {
+		color: black;
+		font-size: 2rem;
+	}
